@@ -1,9 +1,10 @@
 class MainController < ApplicationController
   def index
-    render('index')
+    # render('index')
   end
   
   def about
-    render('about')
+    @createdBy = 'DawoodAli23'
+    # render('about')
   end
 end
