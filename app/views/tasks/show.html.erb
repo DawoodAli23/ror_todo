@@ -3,18 +3,19 @@
     <h2>Tasks</h2>
     <table class='listing' style="width: 100%">
         <tr class='header'>
-            <th>#</th>
-            <th>Task</th>
-            <th>Completed</th>
-            <th>Description</th>
-            <th>Category</th>
+            <th>#</th><td><%= @task.position %></td>
         </tr>
         <tr>
-            <td><%= @task.position %></td>
-            <td><%= @task.name %></td>
-            <td><%= @task.completed? ? 'Yes':'No' %></td>
-            <td><%= @task.description %></td>
-            <td><%= @task.category&.name || '-' %></td>
+            <th>Task</th><td><%= @task.name %></td>
+        </tr>
+        <tr>
+            <th>Completed</th><td><%= @task.completed? ? 'Yes':'No' %></td>
+        </tr>
+        <tr>
+            <th>Description</th><td><%= @task.description %></td>
+        </tr>
+        <tr>
+            <th>Category</th><td><%= @task.category&.name || '-' %></td>
         </tr>
     </table>
 
