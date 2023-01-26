@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
   def index
-    @tasks = ['Learn','Code','Exercies','Sleep','Repeat']
+    @tasks = Task.order(:position)
   end
 
   def show
+    @task = Task.find(params[:id])
   end
 
   def new
