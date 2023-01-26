@@ -1,15 +1,8 @@
-<h1>Tasks#index</h1>
-
-    <% @tasks.each do |task| %>
-        <li>
-            <%= task%>
-        </li>
-    <% end %>
-
-
 <div>
     <h2>Tasks</h2>
-    <%=link_to('Add New Task','#',class: 'action new') %>
+    <div class="float-right">
+        <%=button_to('Add New Task','#',class: 'action new') %>
+    </div>
     <table class='listing' style="width: 100%">
         <tr class='header'>
             <th>#</th>

@@ -1,0 +1,21 @@
+<%= link_to("Back to tasks",tasks_path,class: 'back-link') %>
+<div>
+    <h2>Tasks</h2>
+    <table class='listing' style="width: 100%">
+        <tr class='header'>
+            <th>#</th>
+            <th>Task</th>
+            <th>Completed</th>
+            <th>Description</th>
+            <th>Category</th>
+        </tr>
+        <tr>
+            <td><%= @task.position %></td>
+            <td><%= @task.name %></td>
+            <td><%= @task.completed? ? 'Yes':'No' %></td>
+            <td><%= @task.description %></td>
+            <td><%= @task.category&.name || '-' %></td>
+        </tr>
+    </table>
+
+</div>
