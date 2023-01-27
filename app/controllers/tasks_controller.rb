@@ -28,8 +28,13 @@ class TasksController < ApplicationController
   end
 
   def delete
+    puts 'helllllllo'
   end
 
-  def destory
+  def destroy
+    # task = Task.find(params[:id])
+    # task.destroy
+    # redirect_to tasks_path
+    puts 'helllllllo'
   end
 end
