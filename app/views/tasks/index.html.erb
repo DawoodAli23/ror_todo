@@ -13,7 +13,7 @@
         </tr>
         <% @tasks.each do |task| %>
             <tr>
-                <td><%= task.position %></td>
+                <td><%= task.id %></td>
                 <td><%= task.name %></td>
                 <td><%= task.completed? ? 'Yes':'No' %></td>
                 <td><%= task.category&.name || '-' %></td>
