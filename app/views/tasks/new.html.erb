@@ -1,2 +1,27 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<%= link_to("Back to tasks",tasks_path,:class => 'back-link') %>
+<div>
+    <%= form_for(@task) do |f| %>
+        <h2>Tasks</h2>
+        <table class='listing' style="width: 100%">
+            <tr>
+                <th>Name</th>
+                <td><%= f.text_field(:name) %></td>
+            </tr>
+            <tr>
+                <th>Position</th>
+            <td><%= f.text_field(:position, disabled: true)  %></td>
+            </tr>
+            <tr>
+                <th>Completed</th>
+                <td><%= f.check_box(:completed) %></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><%= f.text_area(:description) %></td>
+            </tr>
+        </table>
+        <div>
+            <%= f.submit('Create Task')%>
+        </div>
+    <% end %>
+</div>
