@@ -1,7 +1,7 @@
 <div>
     <h2>Tasks</h2>
     <div class="float-right">
-        <%=button_to('Add New Task','#',class: 'action new') %>
+        <%=link_to('Add New Task', new_task_path ,class: 'action new') %>
     </div>
     <table class='listing' style="width: 100%">
         <tr class='header'>
@@ -13,7 +13,7 @@
         </tr>
         <% @tasks.each do |task| %>
             <tr>
-                <td><%= task.position %></td>
+                <td><%= task.id %></td>
                 <td><%= task.name %></td>
                 <td><%= task.completed? ? 'Yes':'No' %></td>
                 <td><%= task.category&.name || '-' %></td>
