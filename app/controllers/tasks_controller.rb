@@ -13,7 +13,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(params.require(:task).permit(:name, :completed, :position, :description))
+    @task = Task.new(task_params)
     if @task.save
       redirect_to tasks_path
     else
@@ -22,19 +22,23 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
-
+  
   def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      redirect_to tasks_path
+    end
   end
 
   def delete
-    puts 'helllllllo'
   end
 
   def destroy
-    # task = Task.find(params[:id])
-    # task.destroy
-    # redirect_to tasks_path
-    puts 'helllllllo'
+  end
+
+  def task_params
+    params.require(:task).permit(:name, :completed, :position, :description)
   end
 end
